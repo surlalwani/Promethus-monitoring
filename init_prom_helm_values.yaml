@@ -1,0 +1,31 @@
+
+alertmanager:
+  enabled: false
+ 
+kubeStateMetrics:
+  enabled: true
+
+prometheus-node-exporter:
+  enabled: true
+
+server:
+  enabled: true
+
+
+  service:
+    # Here, port 8080 exposes the Prometheus UI when clicking on
+    # the "Web Server" button.
+    servicePort: 8080
+    type: LoadBalancer
+
+
+  persistentVolume:
+    enabled: true
+    mountPath: /data
+    size: 8Gi
+    
+  replicaCount: 1
+
+prometheus-pushgateway:
+  enabled: false
+
